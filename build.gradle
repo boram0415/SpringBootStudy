@@ -1,0 +1,34 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.16'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+
+java {
+//	sourceCompatibility = '11'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 기본적으로 들어가있는 junit 라이브러리
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// html 파일을 컴파일 시 서버 재시작 없이 view 업데이트
+	compileOnly("org.springframework.boot:spring-boot-devtools")
+	// DB 연동을 도와줌
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// DB와 붙을 때 데이터베이스가 제공하는 클라이언트가 필요함
+	runtimeOnly 'com.h2database:h2'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

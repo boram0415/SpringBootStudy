@@ -10,7 +10,7 @@ MemberRepository {
     Member save(Member member);
 
     // Optional : NPE 발생을 방지하기 위해 사용
-    Optional<Member> findById(Long Id);
+    Optional<Member> findById(Long id);
     Optional<Member> findByName(String name);
 
     List<Member> findAll();

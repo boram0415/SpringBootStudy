@@ -19,9 +19,10 @@ import static org.junit.jupiter.api.Assertions.*;
 * */
 
 @SpringBootTest
-// DB insert 데이터 롤백해주는 어노테이션 (DB commit 하지 않음)
-// 부분적으로 commit 이 필요한경우 commit 어노테이션을 사용하면 됨
 @Transactional
+/*  Transactional 란
+* - DB insert 데이터 롤백해주는 어노테이션 (DB commit 하지 않음)
+* - 부분적으로 commit 이 필요한경우 commit 어노테이션을 사용하면 됨 */
 class MemberServiceIntegrationTest {
 
     @Autowired
